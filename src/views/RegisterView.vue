@@ -1,5 +1,5 @@
 <template>
   <main>
-    Home
+    Register
   </main>
 </template>
