@@ -37,6 +37,7 @@
       placeholder="Breve Biografia"
       autocomplete="off"
       minlength="10"
+      maxlength="255"
     ></textarea>
 
     <button type="submit">Enviar</button>
