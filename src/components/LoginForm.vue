@@ -26,7 +26,7 @@ form {
   width: 100%;
   max-width: 400px;
 
-  padding: 0 35px 0 10px;
+  padding: 0 20px;
 }
 
 input,
