@@ -47,6 +47,7 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 
   width: 100%;
@@ -59,8 +60,8 @@ input,
 textarea,
 button {
   padding: 12.5px;
-  border: none;
   width: 100%;
+  border: none;
 }
 
 input {

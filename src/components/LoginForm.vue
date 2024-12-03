@@ -20,23 +20,30 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+
+  width: 100%;
+  max-width: 400px;
+
+  padding: 0 35px 0 10px;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 12.5px;
+  border: none;
 }
 
 input {
-  width: 400px;
-  padding: 12.5px;
-
   border-radius: 7.5px;
-  border: none;
 }
 
 button {
-  padding: 12.5px;
   margin-top: 1em;
 
   border-radius: 90000px;
-  border: none;
 
   color: var(--color-text);
   background-color: var(--primary-color);
