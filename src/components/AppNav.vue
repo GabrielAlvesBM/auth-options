@@ -8,10 +8,11 @@
 
 <style scoped>
 .nav {
-  padding: 25px 0 10px 0;
+  padding: 25px 7.5px 10px 7.5px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 a {
