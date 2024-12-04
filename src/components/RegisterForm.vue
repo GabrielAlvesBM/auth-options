@@ -1,5 +1,5 @@
 <template>
-  <form action="#" method="POST">
+  <form action="http://localhost:3000/api/register" method="POST">
     <input
       type="text"
       name="name"
