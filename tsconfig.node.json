@@ -13,6 +13,7 @@
   ],
   "compilerOptions": {
     "composite": true,
+    "lib": ["dom", "esnext"],
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
 

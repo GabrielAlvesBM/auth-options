@@ -11,6 +11,7 @@ import RegisterForm from '../components/RegisterForm.vue'
 <style scoped>
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100dvh - 100px);

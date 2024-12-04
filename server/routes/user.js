@@ -8,15 +8,7 @@ router.use(express.urlencoded({ extended: true }))
 
 router.post('/register', async (req, res) => {
   try {
-    const { name, email, password, confirmPassword, bio } = req.body
-
-    if (!name || !email || !password) {
-      return res.status(400).send('Os campos Nome, Email e Senha são obrigatórios.')
-    }
-
-    if (password !== confirmPassword) {
-      return res.status(400).send('As senhas não coincidem')
-    }
+    const { name, email, password, bio } = req.body
 
     const userBio = bio ? bio.trim() : '0 Historias pra contar.'
 
@@ -27,10 +19,10 @@ router.post('/register', async (req, res) => {
 
     await db.execute(query, [name, email, password, userBio])
 
-    return res.status(201).send('Usuário registrado com sucesso!')
+    return res.status(201)
   } catch (error) {
-    console.error(`Erro: ${error}`)
-    return res.send(`Erro: ${error}`)
+    console.error(`Erro no registro: ${error}`)
+    return res.send(`Erro no registro: ${error}`)
   }
 })
 
