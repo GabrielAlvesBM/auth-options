@@ -20,7 +20,10 @@ const handleSubmit = async (event: Event) => {
       withCredentials: true,
     })
     .then(() => {
-      router.push('/')
+      // setLoggedStatus(true)
+      router.push('/').then(() => {
+        window.location.reload()
+      })
     })
     .catch((error) => {
       errorMessage.value = error.response.data

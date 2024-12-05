@@ -1,8 +1,30 @@
+<script setup lang="ts">
+import axios from 'axios'
+import { ref, onMounted } from 'vue'
+
+const isLogged = ref<boolean>(false)
+
+onMounted(() => {
+  axios
+    .get('http://localhost:3000/api/session', {
+      withCredentials: true,
+    })
+    .then((res) => {
+      if (res.data) {
+        isLogged.value = true
+      }
+    })
+    .catch((error) => {
+      console.error(`Erro ao informar o boolean do isLogged: ${error}`)
+    })
+})
+</script>
+
 <template>
   <nav class="nav">
     <RouterLink to="/">Página Inicial</RouterLink>
-    <RouterLink to="/login">Entrar</RouterLink>
-    <RouterLink to="/register">Registrar</RouterLink>
+    <RouterLink to="/login" v-if="!isLogged">Entrar</RouterLink>
+    <RouterLink to="/register" v-if="!isLogged">Registrar</RouterLink>
   </nav>
 </template>
 
