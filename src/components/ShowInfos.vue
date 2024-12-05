@@ -2,7 +2,19 @@
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
-const sessionData = ref<object>({})
+interface UserSession {
+  id: number
+  name: string
+  email: string
+  bio: string
+}
+
+const userSession = ref<UserSession>({
+  id: 0,
+  name: '',
+  email: '',
+  bio: '',
+})
 
 onMounted(() => {
   axios
@@ -10,7 +22,7 @@ onMounted(() => {
       withCredentials: true,
     })
     .then((res) => {
-      sessionData.value = res.data
+      userSession.value = res.data
     })
     .catch((error) => {
       console.error(error)
@@ -20,10 +32,23 @@ onMounted(() => {
 
 <template>
   <section>
-    <pre>
-      {{ sessionData }}
-    </pre>
+    <ul class="infos">
+      <li><span class="info-name">Id:</span> {{ userSession.id }}</li>
+      <li><span class="info-name">Nome:</span> {{ userSession.name }}</li>
+      <li><span class="info-name">E-mail:</span> {{ userSession.email }}</li>
+      <li><span class="info-name">Biografia:</span> {{ userSession.bio }}</li>
+    </ul>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.infos {
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.info-name {
+  color: var(--accent-color);
+}
+</style>
