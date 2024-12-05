@@ -85,4 +85,19 @@ router.get('/users', async (req, res) => {
   }
 })
 
+router.get('/logout', (req, res) => {
+  if (!req.session) {
+    res.status(400).send('Nenhuma sessão ativa encontrada.')
+  }
+
+  req.session.destroy((error) => {
+    if (error) {
+      return res.status(500).send(`Erro ao realizar logout: ${error}`)
+    }
+
+    res.clearCookie('connect.sid')
+    res.status(200).send('Logout realizado com sucesso!')
+  })
+})
+
 export default router

@@ -4,6 +4,20 @@ import { ref, onMounted } from 'vue'
 
 const isLogged = ref<boolean>(false)
 
+const logout = () => {
+  axios
+    .get('http://localhost:3000/api/logout', {
+      withCredentials: true,
+    })
+    .then(() => {
+      isLogged.value = false
+      window.location.reload()
+    })
+    .catch((error) => {
+      console.error('Erro ao deslogar: ', error)
+    })
+}
+
 onMounted(() => {
   axios
     .get('http://localhost:3000/api/session', {
@@ -25,6 +39,7 @@ onMounted(() => {
     <RouterLink to="/">Página Inicial</RouterLink>
     <RouterLink to="/login" v-if="!isLogged">Entrar</RouterLink>
     <RouterLink to="/register" v-if="!isLogged">Registrar</RouterLink>
+    <button @click="logout()" v-if="isLogged">Deslogar</button>
   </nav>
 </template>
 
@@ -37,7 +52,8 @@ onMounted(() => {
   gap: 25px;
 }
 
-a {
+a,
+button {
   text-decoration: none;
 
   font-size: 1.1rem;
@@ -50,7 +66,15 @@ a {
     padding 0.45s ease;
 }
 
-a:hover {
+button {
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
   padding: 0 15px;
   transform: scale(1.1);
 }
