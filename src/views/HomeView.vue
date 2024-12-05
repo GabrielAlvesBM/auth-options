@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import HomeTitle from '../components/HomeTitle.vue'
+import ShowInfos from '../components/ShowInfos.vue';
 </script>
 
 <template>
   <main>
+    <ShowInfos />
     <HomeTitle />
   </main>
 </template>

@@ -1,5 +1,39 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
+
+const router = useRouter()
+const errorMessage = ref<string>('')
+
+const handleSubmit = async (event: Event) => {
+  const form = event.target as HTMLFormElement
+  const formData = new FormData(form)
+
+  const data = {
+    email: formData.get('email') as string,
+    password: formData.get('password') as string,
+  }
+
+  axios
+    .post('http://localhost:3000/api/login', data, {
+      withCredentials: true,
+    })
+    .then(() => {
+      router.push('/')
+    })
+    .catch((error) => {
+      errorMessage.value = error.response.data
+    })
+}
+</script>
+
 <template>
-  <form action="#" method="POST">
+  <div v-if="errorMessage" class="error-card">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <form @submit.prevent="handleSubmit">
     <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off" required />
     <input
       type="password"
@@ -53,5 +87,17 @@ button {
 
 button:hover {
   background-color: var(--secondary-color);
+}
+
+.error-card {
+  padding: 10px 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  margin: 0 10px 10px 10px;
+}
+
+.error-card p {
+  margin: 0px;
 }
 </style>
