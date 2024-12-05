@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
     return res.status(200).send('Login bem-sucedido')
   } catch (error) {
     console.error(`Erro no login: ${error}`)
-    return res.status(500).send(`Erro no login: ${error}`)
+    return res.status(500).send('Erro no login.')
   }
 })
 
@@ -70,7 +70,7 @@ router.post('/register', async (req, res) => {
     return res.status(201).send('Registro realizado com sucesso!')
   } catch (error) {
     console.error(`Erro no registro: ${error}`)
-    return res.send(`Erro no registro: ${error}`)
+    return res.send('Erro no registro.')
   }
 })
 
@@ -80,7 +80,7 @@ router.get('/users', async (req, res) => {
     return res.json(rows)
   } catch (error) {
     console.error(`Erro ao buscar usuarios: ${error}`)
-    return res.status(500).send(`Erro ao buscar usuarios: ${error}`)
+    return res.status(500).send('Erro ao buscar usuarios.')
   }
 })
 

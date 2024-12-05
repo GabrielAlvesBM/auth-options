@@ -39,8 +39,7 @@ const handleSubmit = async (event: Event) => {
       router.push('/')
     })
     .catch((error) => {
-      console.error(error)
-      errorMessage.value = 'Erro ao interagir com o servidor.'
+      errorMessage.value = error.response.data
     })
 }
 </script>
