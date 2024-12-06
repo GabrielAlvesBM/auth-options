@@ -20,7 +20,6 @@ const handleSubmit = async (event: Event) => {
       withCredentials: true,
     })
     .then(() => {
-      // setLoggedStatus(true)
       router.push('/').then(() => {
         window.location.reload()
       })

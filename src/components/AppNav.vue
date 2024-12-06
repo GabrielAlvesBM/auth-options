@@ -10,7 +10,6 @@ const logout = () => {
       withCredentials: true,
     })
     .then(() => {
-      isLogged.value = false
       window.location.reload()
     })
     .catch((error) => {
@@ -29,7 +28,7 @@ onMounted(() => {
       }
     })
     .catch((error) => {
-      console.error(`Erro ao informar o boolean do isLogged: ${error}`)
+      console.error(`Erro ao acessar a sessão: ${error}`)
     })
 })
 </script>
