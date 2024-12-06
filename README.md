@@ -1,36 +1,33 @@
 # Auth Options
+
 Sistema de Autenticação com Vue.js, Express e Axios
 
 ## 📝 Descrição
 
-Este projeto é um sistema de autenticação que utiliza **Vue.js** no front-end, **Express** no back-end e **Axios** para comunicação entre as camadas. Ele oferece suporte para autenticação via email e senha, além de login pelas redes sociais, como Google e Facebook, garantindo uma experiência de login rápida e segura.
+Este projeto é um sistema de autenticação simples que utiliza **Vue.js** no front-end, **Express** no back-end e **Axios** para comunicação entre as camadas. Ele oferece suporte para autenticação via email e senha, garantindo uma experiência de login segura.
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Front-end**: Vue.js
 - **Back-end**: Express
 - **Comunicação**: Axios
-- **Autenticação Social**: OAuth2 (Google, Facebook, etc...)
-<!-- - **Persistência de Dados**: <BandoDeDados> -->
-- **Gerenciamento de Estado**: Vuex
+- **Banco de Dados**: MySQL
 
 ## 🎯 Funcionalidades
 
 - Login e registro com email e senha.
-- Integração com redes sociais (Google, Facebook).
 - Validação de dados no front-end e no back-end.
-- Persistência segura de tokens de autenticação (JWT).
 - Tela de logout e gerenciamento de sessões.
 
-<!-- 
+<!--
 
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
 
 - Node.js instalado na máquina.
-- <BancoDeDados> configurado.
-- Credenciais para APIs das redes sociais (Google, Facebook).
+- MySQL configurado.
+- Banco de dados criado para o sistema.
 
 ### Passo a Passo
 
