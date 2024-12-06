@@ -14,6 +14,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100dvh - 100px);
+  margin-top: 75px;
 }
 </style>

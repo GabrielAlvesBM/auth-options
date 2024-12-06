@@ -102,4 +102,10 @@ button:hover {
 .error-card p {
   margin: 0px;
 }
+
+@media (max-width: 500px) {
+  body {
+    margin: 10px !important;
+  }
+}
 </style>
