@@ -21,6 +21,6 @@ p {
 
 .pitch a {
   font-size: 1.6rem;
-  color: var(--primary-color)
+  color: #5c2a91;
 }
 </style>
