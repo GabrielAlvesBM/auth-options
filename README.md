@@ -4,7 +4,7 @@ Sistema de Autenticação com Vue.js, Express e Axios
 
 ## 📝 Descrição
 
-Este projeto é um sistema de autenticação simples que utiliza **Vue.js** no front-end, **Express** no back-end e **Axios** para comunicação entre as camadas. Ele oferece suporte para autenticação via email e senha, garantindo uma experiência de login segura.
+Este projeto é um sistema de autenticação simples, desenvolvido com o objetivo de estudar e aplicar novas tecnologias. Ele utiliza **Vue.js** no front-end, **Express** no back-end e **Axios** para a comunicação entre as camadas. O sistema oferece suporte à autenticação por email e senha, garantindo uma experiência de login segura e eficiente.
 
 ## 🛠️ Tecnologias Utilizadas
 
