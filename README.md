@@ -1,6 +1,6 @@
 # Auth Options
 
-Sistema de Autenticação com Vue.js, Express e Axios
+Sistema de Autenticação com Vue.js, Express e Axios.
 
 ## 📝 Descrição
 
@@ -34,7 +34,7 @@ Este projeto é um sistema de autenticação simples, desenvolvido com o objetiv
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/sistema-autenticacao.git
+   git clone https://github.com/GabrielAlvesBM/auth-options.git
    cd sistema-autenticacao
    ```
 
